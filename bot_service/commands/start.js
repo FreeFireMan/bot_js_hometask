@@ -9,7 +9,7 @@ module.exports = (bot) => {
         userService.isRegUser(id).then(bool =>{
             if(bool){
                 userService.getUserByID(id).then(user=>{
-                     ctx.reply(`Наши привітання, ${user[2] || ''} ${user[1] || ''} `);
+                     ctx.reply(`Наші вітання, ${user[2] || ''} ${user[1] || ''} `);
                 })
             }else{
                 ctx.reply(firstMessage,contact)
