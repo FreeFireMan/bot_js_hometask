@@ -145,6 +145,28 @@ class UserService {
         }
     }
 
+    getUserByID(id) {
+
+        try {
+             console.log(id);
+            return googleAuthUtil.authorize()
+                .then(async autClient => {
+                    const sheets = google.sheets({version: 'v4', auth: autClient});
+                    return await sheets.spreadsheets.values.get({
+                        spreadsheetId: GOOGLE.SPREADSHEETID,
+                        range: GOOGLE.RANGE2,
+                    }).then(response => {
+                        const {data: {values}} = response
+
+                        return values.find(value => +value[0] === id)
+                    })
+                })
+        } catch (e) {
+            console.log(e);
+            // throw new ControllerError("MY MSG ERORR: " + e, 500, 'userService/createUser')
+        }
+    }
+
 }
 
 module.exports = new UserService();
