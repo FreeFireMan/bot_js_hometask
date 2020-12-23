@@ -2,6 +2,8 @@
 
 module.exports = async (ctx, next) => {
     try {
+        console.log('ctx.chat.type');
+        console.log(ctx.chat.type);
         if (ctx.chat.type === 'group') {
             next();
         } else {
