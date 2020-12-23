@@ -2,9 +2,8 @@
 
 module.exports = async (ctx, next) => {
     try {
-        console.log('ctx.chat.type');
-        console.log(ctx.chat.type);
-        if (ctx.chat.type === 'group') {
+        const {type} = ctx.chat;
+        if (type === 'group' || 'supergroup') {
             next();
         } else {
             await ctx.reply('Ця команда не використовувається тут');
