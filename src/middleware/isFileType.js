@@ -1,8 +1,8 @@
 // Мідлварка для перевірки чи mimeType document for forwarding
 const {
     FILETYPE: fileType
-} = require('./../constants')
-const {TG: {REPORT_CHANNEL}} = require('./../config/config')
+} = require('../constants')
+const {TG: {REPORT_CHANNEL}} = require('../config/config')
 
 module.exports = async (ctx, next) => {
     try {

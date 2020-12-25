@@ -1,15 +1,15 @@
 const fs = require('fs');
 const path = require('path');
 
-const {userService} = require('./../../service')
-const middleware = require('./../../middleware')
-
+const {userService} = require('../../service')
+const middleware = require('../../middleware')
+//todo delete
 module.exports = (bot) => {
 
     bot.on('document',
         middleware.isChatTypePrivate,
         middleware.isUserReq,
-        middleware.isFileType,
+        middleware.isMimeType,
         ctx => {
             const idChat = fs.readFileSync(path.join(process.cwd(), 'chat.txt'), "utf8")
 
@@ -19,7 +19,7 @@ module.exports = (bot) => {
 
             ctx
                 .forwardMessage(idChat, ctx.message.id)
-                .then(res => {
+                .then(() => {
                     ctx.reply('file is forwarding')
                 })
                 .catch(err => {

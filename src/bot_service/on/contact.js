@@ -1,5 +1,5 @@
- const {userService} = require('./../../service');
-const {removeKeyboard} = require('./../../constants').KEYBOARD
+ const {userService} = require('../../service');
+const {removeKeyboard} = require('../../constants').KEYBOARD
 
 module.exports = (bot) => {
     bot.on('contact', async ctx => {

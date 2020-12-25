@@ -1,6 +1,6 @@
-const {firstMessage} = require('./../../constants').MESSAGES
-const {contact} = require('./../../constants').KEYBOARD
-const { userService } = require('./../../service')
+const {firstMessage} = require('../../constants').MESSAGES
+const {contact} = require('../../constants').KEYBOARD
+const { userService } = require('../../service')
 module.exports = (bot) => {
 
     bot.start(ctx => {

@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
 const {google} = require('googleapis');
-const {GOOGLE} = require('../config');
+// const {GOOGLE} = require('../config');
 
 
 let client_secret_part = 'credentials.json';

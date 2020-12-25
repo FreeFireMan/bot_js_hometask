@@ -1,6 +1,6 @@
 
-const middleware = require('./../../middleware');
-const {helpMessage} = require('./../../constants').MESSAGES
+const middleware = require('../../middleware');
+const {helpMessage} = require('../../constants').MESSAGES
 
 module.exports = (bot) => {
     bot.command('/help',

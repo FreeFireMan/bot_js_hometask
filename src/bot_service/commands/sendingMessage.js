@@ -1,5 +1,5 @@
 
-const middleware = require('./../../middleware');
+const middleware = require('../../middleware');
 
 module.exports = (bot) => {
     bot.command('/send_messages',

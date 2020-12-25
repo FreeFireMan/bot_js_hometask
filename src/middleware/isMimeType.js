@@ -1,7 +1,7 @@
 // Мідлварка для перевірки чи mimeType document for forwarding
 const {
     MIMETYPE: mimeType
-} = require('./../constants')
+} = require('../constants')
 
 module.exports = async (ctx, next) => {
     try {

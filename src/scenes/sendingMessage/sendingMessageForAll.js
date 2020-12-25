@@ -1,5 +1,5 @@
 // Сцена для
-const {userService} = require('./../../service');
+const {userService} = require('../../service');
 
 
 const WizardScene = require('telegraf/scenes/wizard');

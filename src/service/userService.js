@@ -1,8 +1,8 @@
 // const db = require('../database').getInstance();
 // const ControllerError = require('../error/ControllerError');
-const {google:{client: googleAuthUtil}} = require('./../config')
+const {google:{client: googleAuthUtil}} = require('../config')
 const {google} = require('googleapis');
-const {GOOGLE} = require('./../config/config');
+const {GOOGLE} = require('../config/config');
 // const db = require('./../database').getInstance()
 
 
