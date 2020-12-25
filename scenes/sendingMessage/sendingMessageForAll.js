@@ -24,7 +24,7 @@ async function firstStep(ctx) {
 
 async function secondStep(ctx) {
     try {
-
+        const rejectMsgId = []
         const allUsers = await userService.getIdAllUsers()
         ctx.reply('Почав розсилку')
 
@@ -35,11 +35,14 @@ async function secondStep(ctx) {
                 await ctx.forwardMessage(allUsers[i],ctx.from.id, ctx.message_id)
 
             } catch (e) {
-
-                console.error('this id not valid '+allUsers[i]+'\n',e);
+                rejectMsgId.push(`${allUsers[i]} := ${e.description} \n`)
+                console.error('this id not valid '+allUsers[i]+' '+e.description);
             }
         }
         console.log('-------------------forwardMessage----------------------------------------------');
+
+        ctx.reply('Закончил')
+        rejectMsgId.length > 0 && ctx.reply('для этих пользователей сообщение не было доставленно \n' + rejectMsgId )
 
         await ctx.scene.leave();
 

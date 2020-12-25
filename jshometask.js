@@ -5,15 +5,17 @@ require('dotenv').config();
 const {bot} = require('./config/telegram/telegraf');
 
 // bot_use
-const {useSession} = require('./bot_service/use');
+const {useSession,useScene} = require('./bot_service/use');
 useSession(bot);
+useScene(bot);
 
 //commands
-const {launch,start,help,setForForwarding} = require('./bot_service/commands');
+const {launch,start,help,setForForwarding,sendingMessage} = require('./bot_service/commands');
 
 start(bot);
 help(bot);
 setForForwarding(bot);
+sendingMessage(bot);
 
 //on
 const {contact,checkDocument} = require('./bot_service/on');
