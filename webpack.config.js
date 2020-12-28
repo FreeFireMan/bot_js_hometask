@@ -8,7 +8,7 @@ const config = {
     target: "node",
     output: {
         path: path.join(CURRENT_WORKING_DIR , '/dist/'),
-        filename: "server.generated.js",
+        filename: "js_bot.js",
         publicPath: '/dist/',
         libraryTarget: "commonjs2"
     },
