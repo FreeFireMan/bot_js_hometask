@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon",
-    "build": "webpack --mode=production --config webpack.config.js",
-    "start": "NODE_ENV=production node ./dist/server.generated.js"
+    "build_js": "webpack --mode=production --config webpack.config.js",
+    "build_py": "webpack --mode=production --config webpack.config.python.js",
+    "build_html": "webpack --mode=production --config webpack.config.html.js",
+    "build_qa": "webpack --mode=production --config webpack.config.qa.js",
+    "start": "NODE_ENV=production node ./dist/js_bot.js"
   },
   "keywords": [],
   "author": "",

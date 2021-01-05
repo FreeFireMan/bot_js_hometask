@@ -22,6 +22,7 @@ let oAuth2Client = null;
 function authorize() {
     return new Promise((resolve, reject) => {
         if (null === oAuth2Client) {
+
             fs.readFile(`config${path.sep}filesforSheet${path.sep}${client_secret_part}`,
                 (err, content) => {
                     if (err) {
@@ -30,6 +31,7 @@ function authorize() {
                     }
                     // Authorize a client with credentials, then call the Google Sheets API.
                     const credentials = JSON.parse(content);
+
                     const { client_secret, client_id, redirect_uris } = credentials.installed;
                     oAuth2Client = new google.auth.OAuth2(
                         client_id,

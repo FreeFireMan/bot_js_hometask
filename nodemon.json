@@ -3,5 +3,5 @@
   "watch": [
     "./src"
   ],
-  "exec": "webpack --mode=development --config webpack.config.js && node ./dist/server.generated.js"
+  "exec": "webpack --mode=development --config webpack.config.js && node ./dist/js_bot.js"
 }
