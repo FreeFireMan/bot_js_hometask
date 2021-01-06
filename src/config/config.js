@@ -16,6 +16,7 @@ module.exports = {
         RANGE2: process.env.RANGE_LIST2,
         COLUMN_LIST2_1: process.env.RANGE_LIST2_FIRST_COLUMN,
         COLUMN_LIST3_1: process.env.RANGE_LIST3_FIRST_COLUMN,
+        COLUMN_LIST_CHATS: process.env.RANGE_LIST_OF_CHATS,
     },
 
 }
