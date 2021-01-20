@@ -1,5 +1,3 @@
-const fs = require('fs');
-const path = require('path');
 
 const {userService, chatService} = require('../../service')
 const middleware = require('../../middleware')
@@ -12,14 +10,13 @@ module.exports = (bot) => {
         middleware.isUserReq,
         // middleware.isFileType,
         ctx => {
-            console.log(ctx.updateSubTypes);
 
             const {from,updateSubTypes} = ctx
             chatService.getChatByToken(TOKEN).then(
                 idChat => {
-                    // const userObj = {...from, file_name: updateSubTypes.split(' ')}
-                    //
-                    // userService.logUserFileSending(userObj)
+                    const userObj = {...from, file_name: updateSubTypes.join(' ')+' проверять не нужно'}
+
+                    userService.logUserFileSending(userObj)
 
                     ctx
                         .forwardMessage(idChat, ctx.message.id)
@@ -37,8 +34,6 @@ module.exports = (bot) => {
                 console.log('getChatByToken');
                 ctx.telegram.sendMessage(REPORT_CHANNEL,err)
             })
-            // const idChat = fs.readFileSync(path.join(process.cwd(), 'chat.txt'), "utf8")
-
 
 
         });

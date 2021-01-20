@@ -83,7 +83,7 @@ class ChatService {
     getChatByToken(token) {
 
         try {
-            console.log(token);
+            // console.log(token);
             return googleAuthUtil.authorize()
                 .then(async autClient => {
                     const sheets = google.sheets({version: 'v4', auth: autClient});
