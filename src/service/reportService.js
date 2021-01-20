@@ -11,6 +11,14 @@ class ReportService {
     constructor() {
 
     }
+    createErorMsg(erorrObj){
+        const reportMsg = 'file_name: '+erorrObj.file_name+'\n'
+            +'mime_type: '+erorrObj.mime_type+'\n'
+            +'userID: '+erorrObj.id+'\n'
+            +'first_name: '+erorrObj.first_name+'\n'
+            +'last_name: '+erorrObj.last_name+'\n'
+            +'username: '+erorrObj.username+'\n'
+    }
 
     createEror(error) {
 

@@ -53,7 +53,7 @@ class UserService {
 
     logUserFileSending(userObj) {
         try {
-            // console.log(userObj);
+            console.log(userObj);
             return googleAuthUtil.authorize()
                 .then(autClient => {
                     const sheets = google.sheets({version: 'v4', auth: autClient});
@@ -69,7 +69,7 @@ class UserService {
                                     userObj.first_name,
                                     userObj.last_name,
                                     userObj.username,
-                                    userObj.file_name,
+                                    userObj.file_name ,
                                     new Date().toDateString(),
                                     new Date().toTimeString().split(' ')[0]]
                             ],

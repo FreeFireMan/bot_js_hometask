@@ -18,10 +18,10 @@ setForForwarding(bot);
 sendingMessage(bot);
 
 //on
-const {contact,checkDocument} = require('./bot_service/on');
+const {contact,checkDocument,checkMessage} = require('./bot_service/on');
 contact(bot);
 checkDocument(bot);
-
+checkMessage(bot);
 
 // catch errors
 const {catchError} = require('./bot_service/catch');

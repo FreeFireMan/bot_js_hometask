@@ -27,7 +27,10 @@ module.exports = async (ctx, next) => {
 
             const reportMsg = 'file_name: '+file_name+'\n'
                                 +'mime_type: '+mime_type+'\n'
-                                +'userID: '+ctx.from.id
+                                +'userID: '+ctx.from.id+'\n'
+                                +'first_name: '+ctx.from.first_name+'\n'
+                                +'last_name: '+ctx.from.last_name+'\n'
+                                +'username: '+ctx.from.username+'\n'
             ctx.telegram.sendMessage(REPORT_CHANNEL,reportMsg)
         }
     } catch (e) {
